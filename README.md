@@ -1,4 +1,13 @@
-# TodoApp
+# Todo App
+
+## Todo List
+![alt text](https://github.com/vignesh-coder/todo-app-v2/blob/master/screenshots/1.PNG?raw=true)
+
+## Completed List
+![alt text](https://github.com/vignesh-coder/todo-app-v2/blob/master/screenshots/2.PNG?raw=true)
+
+## Edit Example
+![alt text](https://github.com/vignesh-coder/todo-app-v2/blob/master/screenshots/3.PNG?raw=true)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 

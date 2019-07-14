@@ -1,0 +1,26 @@
+<div class="card" class="card text-white" [ngClass]="[todoItem.color]" style="max-width: 18rem;">
+  <div class="card-header">
+    <input type="text" class="form-control" placeholder="title" [(ngModel)]="todoItem.title"/>
+  </div>
+  <div class="card-body">
+    <textarea placeholder="description" class="form-control" [(ngModel)]="todoItem.description"></textarea>
+    <select [(ngModel)]="todoItem.color" class="form-control mt-3">
+      <option value="bg-primary">Blue</option>
+      <option value="bg-secondary">Gray</option>
+      <option value="bg-success">Green</option>
+      <option value="bg-danger">Red</option>
+      <option value="bg-warning">Yellow</option>
+      <option value="bg-info">Teal</option>
+      <option value="bg-dark">Black</option>
+    </select>
+    <br>
+    <button class="btn btn-outline-light btn-sm float-right" (click)="updateTodo()">
+      <div *ngIf="todoItem.id === null">
+        Add
+      </div>
+      <div *ngIf="todoItem.id !== null">
+        Update
+      </div>
+    </button>
+  </div>
+</div>

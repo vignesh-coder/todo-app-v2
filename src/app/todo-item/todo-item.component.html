@@ -1,0 +1,22 @@
+<div *ngIf="!editMode" class="card text-white" [ngClass]="[todoItem.color]" style="max-width: 18rem;">
+  <div class="card-header">
+    {{this.todoItem.title}}
+  </div>
+  <div class="card-body">
+    <p>{{this.todoItem.description}}</p>
+    <div class="d-flex justify-content-center">
+      <div class="mt-5 btn-toolbar" role="group">
+        <div class="btn-group mr-2">
+          <button class="btn btn-outline-light btn-sm" (click)="editTodo()">edit</button>
+          <button class="btn btn-outline-light btn-sm" (click)="deleteTodo()">delete</button>
+        </div>
+        <div class="btn-group" *ngIf="!this.todoItem.isCompleted">
+          <button class="btn btn-outline-light btn-sm" (click)="markAsCompleted()">Mark as done</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="editMode">
+  <app-update-todo [todoItem]="todoItem" (update)="onUpdated($event)" ></app-update-todo>
+</div>

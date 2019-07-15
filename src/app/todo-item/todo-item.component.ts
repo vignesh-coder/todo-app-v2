@@ -31,8 +31,9 @@ export class TodoItemComponent implements OnInit {
     this.editMode = true;
   }
 
-  onUpdated(todo: Todo) {
+  update(todo: Todo) {
     this.editMode = false;
     this.todoItem = { ...todo };
+    this.todoService.updateTodo(todo);
   }
 }

@@ -15,7 +15,7 @@ export class UpdateTodoComponent implements OnInit {
     title: '',
     description: '',
     isCompleted: false,
-    color: 'bg-primary',
+    color: 'primary',
   };
 
   @Output() update: EventEmitter<Todo> = new EventEmitter();
@@ -29,15 +29,8 @@ export class UpdateTodoComponent implements OnInit {
   updateTodo() {
 
     if (this.todoItem !== null && this.todoItem.title !== '' && this.todoItem.description !== '') {
-      const obj = this.todoService.updateTodo(this.todoItem);
-      this.update.emit(obj);
-      this.todoItem = {
-        id: null,
-        title: '',
-        description: '',
-        isCompleted: false,
-        color: 'bg-primary',
-      };
+      this.update.emit({...this.todoItem});
+      this.todoItem = { id: null, title: '', description: '', isCompleted: false, color: 'primary' };
     }
   }
 

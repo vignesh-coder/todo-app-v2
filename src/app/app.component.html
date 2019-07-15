@@ -2,10 +2,10 @@
   <mat-tab label="Todo">
     <div class="container-fluid mt-5">
       <div class="row">
-        <div class="col-sm-3">
-          <app-update-todo></app-update-todo>
+        <div class="col-sm-4">
+          <app-update-todo (update)="update($event)"></app-update-todo>
         </div>
-        <div class="col-sm-9">
+        <div class="col-sm-8">
           <app-list-todo [completed]="false"></app-list-todo>
         </div>
       </div>
